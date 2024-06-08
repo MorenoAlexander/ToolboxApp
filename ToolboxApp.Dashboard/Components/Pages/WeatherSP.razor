@@ -1,0 +1,56 @@
+﻿@page "/weather_sp"
+@using MediatR
+@using ToolboxApp.Domain.OperationalData
+@using ToolboxApp.Features.OperationalData
+@rendermode InteractiveServer
+
+@inject IMediator Mediator
+<PageTitle>Weather SP</PageTitle>
+
+
+<h3>weather_sp</h3>
+
+@if (_infos == null)
+{
+    <p>
+        <em>Loading...</em>
+    </p>
+}
+else
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ProcedureName</th>
+            <th>ParameterName</th>
+            <th>OrdinalPosition</th>
+            <th>ParameterMode</th>
+            <th>MaxLength</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var info in _infos)
+        {
+            <tr>
+                <td>@info.ProcedureName</td>
+                <td>@info.ParameterName</td>
+                <td>@info.OrdinalPosition</td>
+                <td>@info.ParameterMode</td>
+                <td>@info.MaxLength</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    private StoredProcedureInfo[] _infos;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var query = new GetProcedureData.GetProcedureDataCommand("AddWeatherSummary");
+        _infos = (await Mediator.Send(query)).ToArray();
+    }
+
+
+}

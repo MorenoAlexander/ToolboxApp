@@ -5,6 +5,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <UserSecretsId>4c82bccf-01f4-4225-b9b3-86a272e9733c</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
@@ -20,6 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\ToolboxApp.Data\ToolboxApp.Data.csproj" />
       <ProjectReference Include="..\ToolboxApp.Domain\ToolboxApp.Domain.csproj" />
       <ProjectReference Include="..\ToolboxApp.Features\ToolboxApp.Features.csproj" />
     </ItemGroup>

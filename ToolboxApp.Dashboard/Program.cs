@@ -2,6 +2,7 @@ using System.Reflection;
 using Microsoft.AspNetCore.Authentication.Negotiate;
 using Microsoft.AspNetCore.Server.IISIntegration;
 using ToolboxApp.Dashboard.Components;
+using ToolboxApp.Data.Configuration;
 using ToolboxApp.Features;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +19,7 @@ builder.Services.AddAuthorization(options => options.FallbackPolicy = options.De
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
 builder.Services.AddFeatures();
+builder.Services.AddDataServices();
 
 var app = builder.Build();
 

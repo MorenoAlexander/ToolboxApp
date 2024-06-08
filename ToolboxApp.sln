@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolboxApp.Domain", "Toolbo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolboxApp.Features", "ToolboxApp.Features\ToolboxApp.Features.csproj", "{3658D514-F9DC-44AC-B84A-68E4F41DC13F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{96CBCF7A-35E2-4164-8C7D-32AD5B86BA90}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

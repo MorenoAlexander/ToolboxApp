@@ -7,7 +7,7 @@ public abstract class GetWeatherForecasts
 {
     public record GetWeatherForecastsQuery(DateOnly StartDate) : IRequest<IEnumerable<WeatherForecast>>;
     
-    public class GetWeatherForecastsHandler : IRequestHandler<GetWeatherForecastsQuery, IEnumerable<WeatherForecast>>
+    public class GetWeatherForecastsHandler() : IRequestHandler<GetWeatherForecastsQuery, IEnumerable<WeatherForecast>>
     {
         private static readonly string[] Summaries = new[]
         {
@@ -17,6 +17,7 @@ public abstract class GetWeatherForecasts
 
         public async Task<IEnumerable<WeatherForecast>> Handle(GetWeatherForecastsQuery request, CancellationToken cancellationToken)
         {
+            
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
