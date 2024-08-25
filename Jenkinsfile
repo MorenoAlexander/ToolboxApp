@@ -13,6 +13,7 @@ pipeline {
 
   stages('build') {
     steps{
+      ls
       dotnet build
     }
 }
