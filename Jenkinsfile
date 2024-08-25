@@ -17,6 +17,4 @@ pipeline {
       dotnet build
     }
   }
-
-  
 }
