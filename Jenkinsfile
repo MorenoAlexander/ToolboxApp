@@ -5,17 +5,17 @@ pipeline {
     }
   }
 
-  stage('Clone') {
-    steps {
-      git url: 'https://github.com/MorenoAlexander/ToolboxApp', branch: 'master'
+  stages {
+    stage('Clone') {
+      steps {
+        git url: 'https://github.com/MorenoAlexander/ToolboxApp', branch: 'master'
+      }
+    }
+    stage('build') {
+      steps{
+        ls -la
+        dotnet build
+      }
     }
   }
-
-  stage('build') {
-    steps{
-      ls -la
-      dotnet build
-    }
-  }
-  
 }
