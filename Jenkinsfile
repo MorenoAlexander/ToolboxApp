@@ -16,4 +16,5 @@ pipeline {
       ls -la
       dotnet build
     }
+  }
 }
