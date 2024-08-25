@@ -13,8 +13,8 @@ pipeline {
     }
     stage('build') {
       steps{
-        ls -la
-        dotnet build
+        sh 'ls -la'
+        sh 'dotnet build'
       }
     }
   }
