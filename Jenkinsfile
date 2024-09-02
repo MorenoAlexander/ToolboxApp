@@ -8,6 +8,7 @@ pipeline {
 
   environment {
     HOME = '/tmp'
+    TEST='yes'
   }
 
   stages {
